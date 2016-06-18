@@ -38,7 +38,7 @@ if [[ -f $VITAL_PATH ]]; then
     source "$VITAL_PATH"
 fi
 
-export ENHANCD_FILTER="fzy:$ENHANCD_FILTER"
+export ENHANCD_FILTER="fzf:peco:percol"
 
 # Exit if called from vim
 [[ -n $VIMRUNTIME ]] && return
