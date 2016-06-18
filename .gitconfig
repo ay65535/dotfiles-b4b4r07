@@ -41,8 +41,8 @@
     default = matching
 
 [user]
-    name  = b4b4r07
-    email = b4b4r07@gmail.com
+	name = ay65535
+	email = ay65535@icloud.com
 
 [pager]
     log  = diff-highlight | less -RX
@@ -55,7 +55,7 @@
 	compactionHeuristic = true
 
 [ghq]
-    root = ~/src
+    root = ~/local/src
 
 [merge]
     tool = vimdiff
