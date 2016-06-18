@@ -22,6 +22,7 @@ bindkey -e
 #bindkey -M viins '^?'    backward-delete-char
 #bindkey -M viins '^G'    send-break
 #bindkey -M viins '^D'    delete-char-or-list
+bindkey '^[[3~' delete-char-or-list
 
 #bindkey -M vicmd '^A'    beginning-of-line
 #bindkey -M vicmd '^E'    end-of-line
