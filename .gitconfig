@@ -28,8 +28,6 @@
     ci = commit
     typechange = status -s | awk '$1=="T"{print $2}' | xargs git checkout
     graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
-    br = switch
-    review = diff origin/master...
 
 [help]
     autocorrect = 1
@@ -41,8 +39,8 @@
     default = matching
 
 [user]
-    name  = b4b4r07
-    email = b4b4r07@gmail.com
+	name = ay65535
+	email = ay65535@icloud.com
 
 [pager]
     log  = diff-highlight | less -RX
@@ -55,8 +53,7 @@
     compactionHeuristic = true
 
 [ghq]
-    root = ~/src
-    # user = "b4b4r07"
+    root = ~/local/src
 
 [merge]
     tool = vimdiff
@@ -76,5 +73,3 @@
     action   = status
     tool     = enhancd
     lessopen = "| pygmentize -O style=solarized -f console256 -g %s"
-[github]
-	user = b4b4r07
