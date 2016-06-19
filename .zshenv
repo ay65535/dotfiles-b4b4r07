@@ -80,7 +80,8 @@ export WORDCHARS='*?.[]~&;!#$%^(){}<>'
 export FZF_DEFAULT_OPTS="--extended --ansi --multi"
 
 # Cask
-#export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+export HOMEBREW_BREWFILE=~/Dropbox/Brewfile-`hostname -s`
 
 # History
 # History file
