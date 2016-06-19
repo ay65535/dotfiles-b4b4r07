@@ -1,11 +1,16 @@
-typeset -gx -U path
-path=( \
-    /usr/local/bin(N-/) \
-    ~/bin(N-/) \
-    ~/.zplug/bin(N-/) \
-    ~/.tmux/bin(N-/) \
-    "$path[@]" \
-    )
+if [[ -z $DOTPATH ]]; then
+    _get_dotpath() {
+        local d
+        d="${0:A:h}"
+        if [[ $d =~ dotfiles$ ]]; then
+            echo "$d"
+        else
+            return 1
+        fi
+    }
+    export DOTPATH="$(_get_dotpath)"
+    unfunction _get_dotpath
+fi
 
 # NOTE: set fpath before compinit
 typeset -gx -U fpath
@@ -56,8 +61,8 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 setopt no_global_rcs
-# Add ~/bin to PATH
-export PATH=~/bin:"$PATH"
+# Add custom path to PATH
+export PATH=~/local/bin:~/bin:/usr/local/bin:/usr/local/sbin:"$PATH"
 
 # Settings for golang
 export GOPATH="$HOME"
@@ -70,11 +75,6 @@ export CORRECT_IGNORE_FILE='.*'
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export WORDCHARS='*?.[]~&;!#$%^(){}<>'
-
-# History file and its size
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
 
 # fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
 export FZF_DEFAULT_OPTS="--extended --ansi --multi"
