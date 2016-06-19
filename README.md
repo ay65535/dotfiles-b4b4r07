@@ -65,43 +65,40 @@ Run the following command to set up a new machine:
         <tr>
             <th></th>
             <th><a name="oneliner">Installation command</a></th>
-            <th>Copy</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><strong>cURL</strong></td>
-            <td>bash -c "$(curl -fsSL <a href="https://raw.githubusercontent.com/b4b4r07/dotfiles/master/etc/install">dot.b4b4r07.com</a>)"</td>
-            <td align="center"><a href="http://b4b4r07.com/dotfiles">:clipboard:</a></td>
+            <td>bash -c "$(curl -fsSL <a href="https://raw.githubusercontent.com/ay65535/dotfiles/master/etc/install">git.io/voaRR</a>)"</td>
         </tr>
         <tr>
             <td><strong>Wget</strong></td>
-            <td>bash -c "$(wget -qO - <a href="https://raw.githubusercontent.com/b4b4r07/dotfiles/master/etc/install">dot.b4b4r07.com</a>)"</td>
-            <td align="center"><a href="http://b4b4r07.com/dotfiles">:clipboard:</a></td>
+            <td>bash -c "$(wget -qO - <a href="https://raw.githubusercontent.com/ay65535/dotfiles/master/etc/install">git.io/voaRR</a>)"</td>
         </tr>
     </tbody>
 </table>
 
 - It is almost the same as the command below except for executing through a Web site directly.
 
-	```console
-	$ make install
-	```
+    ```console
+    $ make install
+    ```
 
-	It is not necessary to perform `make install` at all if this repository was installed by the [installation command](#oneliner).
+    It is not necessary to perform `make install` at all if this repository was installed by the [installation command](#oneliner).
 
 - General download method using the `git` command:
 
-	```console
-	$ git clone https://github.com/b4b4r07/dotfiles.git ~/.dotfiles
-	$ cd ~/.dotfiles && make install
-	```
-	
-	Incidentally, `make install` will perform the following tasks.
-	
-	- `make update`; Updating dotfiles repository
-	- `make deploy`; Deploying dot files
-	- `make init`; Initializing some settings
+    ```console
+    $ git clone https://github.com/ay65535/dotfiles.git ~/.dotfiles
+    $ cd ~/.dotfiles && make install
+    ```
+    
+    Incidentally, `make install` will perform the following tasks.
+    
+    - `make update`; Updating dotfiles repository
+    - `make deploy`; Deploying dot files
+    - `make init`; Initializing some settings
 
 **What's inside?**
 
@@ -122,19 +119,19 @@ When the [installation command](#oneliner) format is not `curl -L URL | sh` but 
 To quickly install:
 
 ```console
-$ curl -sL dot.b4b4r07.com | sh
+$ curl -sL git.io/voaRR | sh
 ```
 
 Difference of *Installation* and *Quick Installation* is that the latter one-liner is shorter than the former one (including typing the number of shift key). However, because when you install in the *Quick installation* shell is not re-boot, it is necessary to perform the `exec sh` yourself.
 
 <table style="border:none;">
   <tr style="border:none;">
-    <td style="border:none;"><strong>42 chars</strong></td>
-    <td style="border:none;"><code>bash -c "$(curl -sL dot.b4b4r07.com)"</code></td>
+    <td style="border:none;"><strong>34 chars</strong></td>
+    <td style="border:none;"><code>bash -c "$(curl -sL git.io/voaRR)"</code></td>
   </tr>
   <tr style="border:none;">
-    <td style="border:none;"><strong>30 chars</strong></td>
-    <td style="border:none;"><code>curl -sL dot.b4b4r07.com | sh</code></td>
+    <td style="border:none;"><strong>26 chars</strong></td>
+    <td style="border:none;"><code>curl -sL git.io/voaRR | sh</code></td>
   </tr>
 </table>
 
@@ -169,7 +166,7 @@ $ make init
 To run `make init` immediately after running the [installation command](#oneliner):
 
 ```console
-$ bash -c "$(curl -L dot.b4b4r07.com)" -s init
+$ bash -c "$(curl -L git.io/voaRR)" -s init
 ```
 
 **Init scripts**
@@ -233,23 +230,23 @@ When setting up a new Mac, you may want to perform the following tasks mainly.
 
 - Install the Xcode Command Line Tools
 
-	You need to have Xcode or, at the very minimum, the Xcode Command Line Tools, which are available as a much smaller download.
-	
-	The easiest way to install the [Xcode Command Line Tools](https://developer.apple.com/downloads) in OS X 10.9+ is to open up a terminal, type `xcode-select --install` and follow the prompts.
+    You need to have Xcode or, at the very minimum, the Xcode Command Line Tools, which are available as a much smaller download.
+    
+    The easiest way to install the [Xcode Command Line Tools](https://developer.apple.com/downloads) in OS X 10.9+ is to open up a terminal, type `xcode-select --install` and follow the prompts.
 
 - Install Homebrew and setup their formulae
 
-	Since OS X does not have a native package manager that you can use from the command line, [Brew](http://brew.sh) (also known as Homebrew), has filled in. 
-	
-	After installing Homebrew, you may want to install some common Homebrew formulae:
-	
-	```console
-	$ make init
-	```
-	
+    Since OS X does not have a native package manager that you can use from the command line, [Brew](http://brew.sh) (also known as Homebrew), has filled in. 
+    
+    After installing Homebrew, you may want to install some common Homebrew formulae:
+    
+    ```console
+    $ make init
+    ```
+    
 - Run some `defaults` commands
 
-	It can set many hidden settings and preferences in Mac OS X, and in individual applications.
+    It can set many hidden settings and preferences in Mac OS X, and in individual applications.
 
 All of these are included in the `make init` for OS X. For more detail, see also [here][platform] of documentation of OS X operation.
 
