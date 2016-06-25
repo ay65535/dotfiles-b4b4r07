@@ -43,9 +43,9 @@
 	email = ay65535@icloud.com
 
 [pager]
-    log  = diff-highlight | less -RX
-    show = diff-highlight | less -RX
-    diff = diff-highlight | less -RX
+    log  = "if [[ $OSTYPE -ne 'cygwin' ]]; then PGR='diff-highlight | less -RX'; else PGR='colordiff'; fi; $PGR"
+    show = "if [[ $OSTYPE -ne 'cygwin' ]]; then PGR='diff-highlight | less -RX'; else PGR='colordiff'; fi; $PGR"
+    diff = "if [[ $OSTYPE -ne 'cygwin' ]]; then PGR='diff-highlight | less -RX'; else PGR='colordiff'; fi; $PGR"
 
 [diff]
     tool      = vimdiff
