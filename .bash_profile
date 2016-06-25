@@ -3,3 +3,8 @@ if [ -f ~/.bashrc ]; then
 fi
 export PATH=/usr/local/bin:$PATH
 eval "$(rbenv init -)"
+
+if [[ $OSTYPE -eq cygwin ]]; then
+  #export SHELLOPTS
+  set -o igncr
+fi
