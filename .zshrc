@@ -7,7 +7,7 @@
 #
 
 umask 022
-limit coredumpsize 0
+[[ "$OSTYPE" != "cygwin" ]] && limit coredumpsize 0
 bindkey -d
 
 # It is necessary for the setting of DOTPATH

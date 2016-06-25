@@ -88,7 +88,11 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export WORDCHARS='*?.[]~&;!#$%^(){}<>'
 
 # fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
-export FZF_DEFAULT_OPTS="--extended --ansi --multi"
+if [[ $OSTYPE != 'cygwin' ]]; then
+    export FZF_DEFAULT_OPTS="--extended --ansi --multi"
+else
+    export FZF_DEFAULT_OPTS="--extended --multi"
+fi
 
 # Cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
