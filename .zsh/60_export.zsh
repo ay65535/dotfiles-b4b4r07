@@ -30,11 +30,17 @@ fi
 # fi
 
 # jenegunn/fzf
-export FZF_DEFAULT_OPTS='
---extended
---ansi
---multi
---bind=ctrl-u:page-up
---bind=ctrl-d:page-down
---bind=ctrl-z:toggle-all
-'
+#export FZF_DEFAULT_OPTS='
+#--extended
+#--ansi
+#--multi
+#--bind=ctrl-u:page-up
+#--bind=ctrl-d:page-down
+#--bind=ctrl-z:toggle-all
+#'
+# fzf - command-line fuzzy finder (https://github.com/junegunn/fzf)
+if [[ $OSTYPE != 'cygwin' ]]; then
+    FZF_DEFAULT_OPTS="--extended --ansi --multi --bind=ctrl-z:toggle-all +s"
+else
+    export FZF_DEFAULT_OPTS="--extended --multi +s"
+fi
