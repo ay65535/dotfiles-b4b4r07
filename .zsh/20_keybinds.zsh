@@ -175,8 +175,8 @@ do-enter() {
 
     zle reset-prompt
 }
-zle -N do-enter
-bindkey '^m' do-enter
+#zle -N do-enter
+#bindkey '^m' do-enter
 
 peco-select-gitadd() {
     local selected_file_to_add
