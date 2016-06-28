@@ -159,6 +159,7 @@ if :; then
     setopt auto_param_slash
     setopt list_types
     setopt auto_menu
+    setopt menu_complete
     setopt auto_param_keys
     setopt interactive_comments
     setopt magic_equal_subst

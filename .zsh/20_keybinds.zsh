@@ -117,11 +117,13 @@ bindkey '^D' _delete-char-or-list-expand
 # Ctrl-R
 _peco-select-history() {
     if true; then
+        local filter=peco
+        local args='--layout=bottom-up'
         BUFFER="$(
         history 1 \
             | sort -k1,1nr \
             | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' \
-            | fzf --query "$LBUFFER"
+            | $filter $args --query "$LBUFFER"
         )"
 
         CURSOR=$#BUFFER
