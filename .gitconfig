@@ -2,6 +2,8 @@
     pager = less -q -R
     excludesfile = ~/.gitignore
     preloadindex = true
+	autocrlf = input
+	safecrlf = true
 
 [color]
     ui = auto
