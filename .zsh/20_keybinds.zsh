@@ -181,23 +181,23 @@ if ! is_tmux_runnning; then
     bindkey '^T' _start-tmux-if-it-is-not-already-started
 fi
 
-do-enter() {
-    if [ -n "$BUFFER" ]; then
-        zle accept-line
-        return
-    fi
+#do-enter() {
+#    if [ -n "$BUFFER" ]; then
+#        zle accept-line
+#        return
+#    fi
 
-    echo
-    if is_git_repo; then
-        git status
-    else
-        ls
-    fi
+#    echo
+#    if is_git_repo; then
+#        git status
+#    else
+#        ls
+#    fi
 
-    zle reset-prompt
-}
-zle -N do-enter
-bindkey '^m' do-enter
+#    zle reset-prompt
+#}
+#zle -N do-enter
+#bindkey '^m' do-enter
 
 peco-select-gitadd() {
     local selected_file_to_add
