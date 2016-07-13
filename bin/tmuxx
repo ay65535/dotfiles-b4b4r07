@@ -61,6 +61,8 @@ else
             tmux_login_shell="/bin/zsh"
             tmux_config=$(cat ~/.tmux.conf <(echo 'set-option -g default-command "reattach-to-user-namespace -l' $tmux_login_shell'"'))
             tmux -f <(echo "$tmux_config") new-session && echo "$(tmux -V) created new session supported OS X"
+        elif is_cygwin; then
+            :  # not use tmux
         else
             tmux new-session && echo "tmux created new session"
         fi
